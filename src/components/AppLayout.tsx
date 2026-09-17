@@ -76,7 +76,7 @@ export function AppLayout({ title, children }: { title: string; children: ReactN
         </header>
         <main className="flex-1 p-4 md:p-6">{children}</main>
         <footer className="no-print border-t border-border px-5 py-4 text-center text-xs text-muted-foreground">
-          {settings.shopName} — البيانات محفوظة على هذا الجهاز
+          تصميم وبرمجة المهندس/ عبدالرحمن الريمي 776020184
         </footer>
       </div>
     </div>

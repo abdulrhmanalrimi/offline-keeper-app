@@ -91,7 +91,10 @@ function Overview() {
                 <li key={o.id} className="flex items-center justify-between py-3 text-sm">
                   <span>
                     <span className="font-medium">
-                      {employees.find((e) => e.id === o.employeeId)?.name ?? "—"}
+                      {o.participants
+                        .map((id) => employees.find((e) => e.id === id)?.name)
+                        .filter(Boolean)
+                        .join("، ") || "—"}
                     </span>
                     <span className="block text-xs text-muted-foreground">
                       {meals.find((m) => m.id === o.mealId)?.name} × {o.qty} — {o.date}
