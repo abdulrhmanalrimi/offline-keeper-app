@@ -75,7 +75,7 @@ function Employees() {
                     onChange={(ev) => actions.updateEmployee(e.id, { dept: ev.target.value })}
                   />
                 </td>
-                <td className="py-2">{orders.filter((o) => o.employeeId === e.id).length}</td>
+                <td className="py-2">{orders.filter((o) => o.participants.includes(e.id)).length}</td>
                 <td className="py-2">
                   <button onClick={() => actions.removeEmployee(e.id)} className="text-destructive" aria-label="حذف">
                     <Trash2 className="size-4" />

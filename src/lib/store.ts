@@ -165,13 +165,13 @@ export function employeeShare(orders: Order[], meals: Meal[], employeeId: string
 }
 
 export function daysInMonth(month: string) {
-  const [y, m] = month.split("-").map(Number);
+  const [y = 0, m = 1] = month.split("-").map(Number);
   const count = new Date(y, m, 0).getDate();
   return Array.from({ length: count }, (_, i) => `${month}-${String(i + 1).padStart(2, "0")}`);
 }
 
 export const arabicMonth = (month: string) => {
-  const [y, m] = month.split("-").map(Number);
+  const [y = 0, m = 1] = month.split("-").map(Number);
   const names = [
     "يناير",
     "فبراير",
@@ -186,7 +186,7 @@ export const arabicMonth = (month: string) => {
     "نوفمبر",
     "ديسمبر",
   ];
-  return `${names[m - 1]} ${y}`;
+  return `${names[m - 1] ?? ""} ${y}`;
 };
 
 export const dmy = (iso: string) => iso.split("-").reverse().join("/");
